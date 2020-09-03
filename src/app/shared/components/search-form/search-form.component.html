@@ -1,0 +1,26 @@
+<form [formGroup]="formGroupSearchForm">
+
+  <label for="name">Name</label>
+  <input id="name" type="text" formControlName="name">
+  <div *ngIf="submitted && !formGroupSearchForm.get('name').valid">
+    Name is required
+  </div>
+
+  <label for="surname">Surname</label>
+  <input id="surname" type="text" formControlName="surname">
+
+  <label for="email">Email</label>
+  <input id="email" type="email" formControlName="email">
+  <div *ngIf="submitted && !formGroupSearchForm.get('email').valid">
+    Email is required and need to be email format
+  </div>
+
+  <label for="password">Password</label>
+  <input id="password" type="password" formControlName="password">
+  <div *ngIf="submitted && !formGroupSearchForm.get('password').valid">
+    Password is required
+  </div>
+
+
+  <button (click)="saveForm()">Save</button>
+</form>
